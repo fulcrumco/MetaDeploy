@@ -159,7 +159,7 @@ class ProductCategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProductCategorySerializer
     queryset = ProductCategory.objects.all()
 
-    @method_decorator(cache_page(60*60*2))
+#    @method_decorator(cache_page(60*60*2))
     def list(self, *args, **kwargs):
         return super().list(*args, **kwargs)  # pragma: nocover
 
