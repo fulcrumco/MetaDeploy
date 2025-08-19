@@ -119,7 +119,7 @@ django==4.2.9
     #   sfdo-template-helpers
 django-allauth==0.60.1
     # via -r requirements/prod.in
-django-binary-database-files==1.0.17
+django-binary-database-files==1.0.18
     # via -r requirements/prod.in
 django-colorfield==0.11.0
     # via -r requirements/prod.in
