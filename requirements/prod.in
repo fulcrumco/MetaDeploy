@@ -4,7 +4,7 @@
 
 https://github.com/SFDO-Tooling/sfdo-template-helpers/archive/v0.23.0.tar.gz
 coloredlogs
-cumulusci==4.0.0
+cumulusci
 Django<5
 Pillow
 ansi2html
