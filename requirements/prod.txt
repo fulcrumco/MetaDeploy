@@ -91,7 +91,7 @@ cryptography==41.0.7
     #   secretstorage
     #   service-identity
     #   sfdo-template-helpers
-cumulusci==3.84.3
+cumulusci==4.0.0
     # via -r requirements/prod.in
 daphne==3.0.2
     # via channels
@@ -402,7 +402,7 @@ six==1.16.0
     #   python-dateutil
     #   salesforce-bulk
     #   snowfakery
-snowfakery==3.6.1
+snowfakery==4.0.0
     # via cumulusci
 sqlalchemy==1.4.49
     # via
