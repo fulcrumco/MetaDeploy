@@ -455,4 +455,7 @@ zope-interface==6.1
     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools
+setuptools==80.10.2
+    # via
+    #   -r requirements/prod.in
+    #   autobahn
