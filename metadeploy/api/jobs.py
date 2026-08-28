@@ -51,13 +51,16 @@ def job(*args, **kw):
     return django_rq_job(*args, **kw)
 
 
-class JobType(str, enum.Enum):
+# StrEnum, not (str, Enum): Python 3.11 changed __format__ on str-mixin
+# enums to render "JobType.JOB" instead of "job", which corrupted the
+# `event=`/`status=` fields in structured job logs.
+class JobType(enum.StrEnum):
     JOB = "job"
     PREFLIGHT = "preflight"
     TEST_JOB = "test_job"
 
 
-class JobLogStatus(str, enum.Enum):
+class JobLogStatus(enum.StrEnum):
     SUCCESS = "success"
     FAILURE = "failure"  # preflight returned negative result
     ERROR = "error"  # job threw an exception and failed

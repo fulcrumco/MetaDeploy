@@ -76,10 +76,13 @@ def test_clear_old_exceptions(job_factory):
 
 
 @pytest.mark.django_db
-def test_fix_dead_jobs_status(job_factory):
-    two_hours_ago = timezone.now() - timedelta(hours=2)
+def test_fix_dead_jobs_status(job_factory, settings):
+    # Derive the age from the configured timeout so the test holds for any
+    # METADEPLOY_JOB_TIMEOUT value (cleanup threshold is timeout + 120s).
+    timeout_seconds = settings.RQ_QUEUES["default"]["DEFAULT_TIMEOUT"]
+    past_timeout = timezone.now() - timedelta(seconds=timeout_seconds + 121)
     old_job = job_factory(status="started")
-    old_job.enqueued_at = two_hours_ago
+    old_job.enqueued_at = past_timeout
     old_job.save()
 
     fix_dead_jobs_status()
