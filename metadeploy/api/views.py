@@ -2,8 +2,6 @@ from datetime import datetime
 from functools import reduce
 from logging import getLogger
 from pathlib import Path
-from django.utils.decorators import method_decorator
-from django.views.decorators.cache import cache_page
 
 import django_rq
 from django.conf import settings
