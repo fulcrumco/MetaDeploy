@@ -91,7 +91,7 @@ cryptography==41.0.7
     #   secretstorage
     #   service-identity
     #   sfdo-template-helpers
-cumulusci==3.84.3
+cumulusci==4.0.0
     # via -r requirements/prod.in
 daphne==3.0.2
     # via channels
@@ -119,7 +119,7 @@ django==4.2.9
     #   sfdo-template-helpers
 django-allauth==0.60.1
     # via -r requirements/prod.in
-django-binary-database-files==1.0.17
+django-binary-database-files==1.0.18
     # via -r requirements/prod.in
 django-colorfield==0.11.0
     # via -r requirements/prod.in
@@ -334,7 +334,7 @@ requests-futures==1.0.1
     # via cumulusci
 requests-oauthlib==1.3.1
     # via django-allauth
-rich==13.7.0
+rich==13.9.4
     # via cumulusci
 robotframework==6.1.1
     # via
@@ -402,7 +402,7 @@ six==1.16.0
     #   python-dateutil
     #   salesforce-bulk
     #   snowfakery
-snowfakery==3.6.1
+snowfakery==4.0.0
     # via cumulusci
 sqlalchemy==1.4.49
     # via
@@ -455,4 +455,7 @@ zope-interface==6.1
     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools
+setuptools==80.10.2
+    # via
+    #   -r requirements/prod.in
+    #   autobahn
