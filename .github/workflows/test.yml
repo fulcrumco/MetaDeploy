@@ -1,8 +1,11 @@
 name: Test
 on:
+  # main needs push-triggered runs: Heroku's "wait for CI" gate watches the
+  # checks on the merge commit. Everything else is validated through its PR,
+  # including cross-repo PRs (the workflow needs no secrets, so fork PRs run).
   push:
+    branches: [main]
   pull_request:
-    types: [reopened]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
